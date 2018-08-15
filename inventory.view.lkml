@@ -499,5 +499,9 @@ view: inventory {
     type:  count_distinct
     sql: ${inventory_id} ;;
     drill_fields: [inventory_id, description]
+    filters: {
+      field: is_out_of_stock
+      value: "yes"
+    }
   }
 }
