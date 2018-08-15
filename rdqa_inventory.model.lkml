@@ -27,6 +27,7 @@ explore: inventory {
     type: inner
     relationship: one_to_one
     sql_on: ${inventory.sku_type_id} = ${sku_type.sku_type_id} ;;
+    sql_table_name: edgeMaster.dbo.skuType ;;
   }
 
   join: status{
