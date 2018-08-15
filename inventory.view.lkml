@@ -446,7 +446,7 @@ view: inventory {
     sql: ${TABLE}.Width ;;
   }
 
-  dimension: isLow {
+  dimension: is_low_stock {
     type: yesno
     sql: ${reorder_point} > ${inventory_provider_xref.qty_on_hand} ;;
   }
@@ -461,7 +461,7 @@ view: inventory {
     sql: ${inventory_id} ;;
     drill_fields: [inventory_id, description, inventory_provider_xref.atp ]
     filters: {
-      field: isLow
+      field: is_low_stock
       value: "yes"
     }
     filters: {

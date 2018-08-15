@@ -10,20 +10,6 @@ datagroup: rdqa_default_datagroup {
 
 persist_with: rdqa_default_datagroup
 
-explore:order_header  {
-  join:order_line  {
-    type: inner
-    relationship: one_to_many
-    sql_on: ${order_header.order_header_id} = ${order_line.order_header_id} ;;
-  }
-
-  join:order_line_detail {
-    type: inner
-    relationship: one_to_many
-    sql_on: ${order_line.order_line_id} = ${order_line_detail.order_line_id} ;;
-  }
-}
-
 explore: inventory {
   join: inventory_provider_xref {
     type: inner
