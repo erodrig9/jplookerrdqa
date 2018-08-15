@@ -483,4 +483,10 @@ view: inventory {
     sql: ${low_count}*1.0 / NULLIF(${count}, 0) ;;
     value_format_name: percent_2
   }
+
+  measure: percent_not_low {
+    type:  number
+    sql: ((NULLIF(${count}, 0) - ${low_count})*1.0) / NULLIF(${count}, 0) ;;
+    value_format_name: percent_2
+  }
 }
