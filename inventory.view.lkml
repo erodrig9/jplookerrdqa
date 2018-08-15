@@ -451,6 +451,11 @@ view: inventory {
     sql: ${reorder_point} > ${inventory_provider_xref.qty_on_hand} ;;
   }
 
+  dimension: is_out_of_stock {
+    type: yesno
+    sql: ${global_qty_on_hand} = 0 and (${global_atp}) = 0);;
+  }
+
   measure: count {
     type: count
     drill_fields: [inventory_id, trademark_name, inventory_provider_xref.count]
@@ -490,8 +495,9 @@ view: inventory {
     value_format_name: percent_2
   }
 
-  measure: out_of_stock {
-    type:  number
-    sql:  ${global_qty_on_hand} = 0 and (${global_atp}) = 0);;
+  measure: out_of_stock_count {
+    type:  count_distinct
+    sql: ${inventory_id} ;;
+    drill_fields: [inventory_id, description]
   }
 }
