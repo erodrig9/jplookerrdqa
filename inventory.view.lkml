@@ -453,7 +453,7 @@ view: inventory {
 
   dimension: is_out_of_stock {
     type: yesno
-    sql: ${global_qty_on_hand} = 0 and (${global_atp}) = 0);;
+    sql: ${global_qty_on_hand} = 0 and (${global_atp}) = 0;;
   }
 
   measure: count {
