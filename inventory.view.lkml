@@ -489,4 +489,9 @@ view: inventory {
     sql: ((NULLIF(${count}, 0) - ${low_count})*1.0) / NULLIF(${count}, 0) ;;
     value_format_name: percent_2
   }
+
+  measure: out_of_stock {
+    type:  number
+    sql:  ${global_qty_on_hand} = 0 and (${global_atp}) = 0);;
+  }
 }
