@@ -1,5 +1,5 @@
 view: sku_type {
-  sql_table_name: dbo.SkuType ;;
+  sql_table_name: edgeMaster.dbo.SkuType ;;
 
   dimension: sku_type_id {
     primary_key: yes
